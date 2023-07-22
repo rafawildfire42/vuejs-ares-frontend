@@ -1,13 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
-const items = ref([
-    {title: "Instalações Elétricas Residenciais", icon: "mdi-home-lightning-bolt", iconSize: "x-large"},
-    {title: "Infraestrutura de Cabeamento Estruturado", icon: "mdi-lan-connect", iconSize: "x-large"},
-    {title: "Automação Residencial", icon: "mdi-home-automation", iconSize: "x-large"},
-    {title: "SPDA", icon: "mdi-fence-electric", iconSize: "x-large"},
-    {title: "Medição agrupada", icon: "mdi-meter-electric", iconSize: "x-large"},
-])
+import { servicesItems } from '@/utils/data'
 
 </script>
 
@@ -20,9 +13,11 @@ const items = ref([
             Solicite um orçamento conosco. Trabalhamos com os seguintes projetos:
         </div>
         <v-list lines="one" class="text-left transparent px-0">
+            <template 
+                v-for="item in servicesItems"
+                :key="item.title">
             <v-list-item
-                v-for="item in items"
-                :key="item.title"
+                v-if="item.enabled"
             >
                 <template v-slot:prepend>
                     <v-icon :icon="item.icon" :size="item.iconSize"></v-icon>
@@ -33,6 +28,7 @@ const items = ref([
                     </div>
                 </template>
         </v-list-item>
+    </template>
         </v-list>
     </div>
 </template>
@@ -43,4 +39,4 @@ const items = ref([
   background-color: transparent !important;
   color: white;
 }
-</style>
+</style>@/utils/data

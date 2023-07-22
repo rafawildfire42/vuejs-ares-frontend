@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import Budget from '@/vue/views/budget/Budget.vue'
+
+</script>
+
 <template>
-    <h3>Orçamento</h3>
+    <div class="py-16">
+        <Budget />
+    </div>
 </template>
+
+<style>
+</style>
