@@ -1,13 +1,27 @@
-<script setup>
+<script setup lang="ts">
 // Importe 'ref' do Vue para utilizar no componente
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 // Defina a variável para controlar o estado do drawer (caso seja utilizado)
 const drawer = ref(false);
+const route = useRoute()
+const router = useRouter()
+
+router.beforeEach((to, from) => {
+
+})
 
 const items = ref([
   { title: "Login", icon: "mdi-account" },
 ])
+
+
+function isRouteActive(route: any) {
+  const currentRoute = useRoute();
+  return currentRoute.path === route;
+}
+
 </script>
 
 <template>
@@ -19,25 +33,25 @@ const items = ref([
 
     <!-- Textos alinhados ao centro -->
     <v-container class="d-flex flex-row justify-space-between">
-      <router-link to="/">
+      <router-link to="/call-budget">
         <v-btn variant="text">
-          <span class="text-sm text-body-1">
+          <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}" class="text-body-1">
             Solicite um orçamento
           </span>
         </v-btn>
       </router-link>
 
-      <router-link to="/">
+      <router-link to="/contacts">
         <v-btn variant="text">
-          <span class="text-sm text-body-1">
+          <span class="text-body-1 text-primary">
             Contatos
           </span>
         </v-btn>
       </router-link>
 
-      <router-link to="/">
+      <router-link to="/about-us">
         <v-btn variant="text">
-          <span class="text-sm text-body-1">
+          <span class="text-body-1 text-primary">
             Sobre nós
           </span>
         </v-btn>
@@ -84,7 +98,13 @@ const items = ref([
 
 .router-link-active,
 .router-link-exact-active {
-  color: inherit;
+  color: blue;
   text-decoration: none;
 }
+
+.active-button {
+  color: blue; /* Ou a cor desejada para o botão ativo */
+  text-decoration: none;
+}
+
 </style>
