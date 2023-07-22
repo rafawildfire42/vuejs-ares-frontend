@@ -2,7 +2,10 @@
 import { ref } from 'vue';
 
 const items = ref([
-    {title: "Instalações Elétricas Residenciais", icon: "mdi-icon"}
+    {title: "Instalações Elétricas Residenciais", icon: "mdi-home-lightning-bolt", iconSize: "x-large"},
+    {title: "Infraestrutura de Cabeamento Estruturado", icon: "mdi-lan-connect", iconSize: "x-large"},
+    {title: "Automação Residencial", icon: "mdi-home-automation", iconSize: "x-large"},
+    {title: "SPDA", icon: "mdi-fence-electric", iconSize: "x-large"},
 ])
 
 </script>
@@ -15,17 +18,17 @@ const items = ref([
         <div class="text-h5 text-left mt-6">
             Solicite um orçamento conosco. Trabalhamos com os seguintes projetos:
         </div>
-        <v-list lines="one" class="text-left transparent">
+        <v-list lines="one" class="text-left transparent px-0">
             <v-list-item
                 v-for="item in items"
                 :key="item.title"
-                :title="item.title"
-                subtitle="..."
-                :prepend-avatar="item.icon"
             >
+                <template v-slot:prepend>
+                    <v-icon :icon="item.icon" :size="item.iconSize"></v-icon>
+                </template>
                 <template #title>
-                    <div class="text-h5">
-                        teste
+                    <div class="text-h6">
+                        {{ item.title }}
                     </div>
                 </template>
         </v-list-item>
