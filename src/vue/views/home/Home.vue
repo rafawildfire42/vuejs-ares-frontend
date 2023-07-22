@@ -2,6 +2,7 @@
 import SideImage from '@/vue/components/home/SideImage.vue'
 import SideText from '@/vue/components/home/SideText.vue'
 import Gradient from '@/assets/hero-gradient.svg'
+
 </script>
 
 <template>

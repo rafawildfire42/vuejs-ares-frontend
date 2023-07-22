@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { requiredRules, emailRules } from '@/utils/validations'
+import { requiredRules, emailRules, cpfRules, cnpjRules, phoneRules } from '@/utils/validations'
 import { servicesItems, taxIDitems } from '@/utils/data'
 
 const valid = ref(false);
@@ -27,88 +27,124 @@ const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
     <v-form v-model="valid">
         <v-container>
             <v-responsive class="align-center fill-height">
-                <v-row justify="center px-16">
+                <v-row justify="center" class="px-md-16 px-0">
+
                     <v-col
-                        cols="3"
+                        cols="12"
+                        md="10"
+                        class="d-flex justify-center"
+                    >
+                        <h2>Preencha o formulário para solicitar o orçamento</h2>
+                    </v-col>
+
+                    <v-col
+                        cols="12"
+                        md="4"
+                        lg="3"
                     >
                     <v-text-field
                         v-model="firstName"
-                        :rules="requiredRules"
+                        :rules="[requiredRules]"
                         label="Primeiro nome"
                         required
                     ></v-text-field>
                     </v-col>
 
                     <v-col
-                        cols="4"
+                        cols="12"
+                        md="6"
+                        lg="4"
                     >
                         <v-text-field
                             v-model="lastName"
-                            :rules="requiredRules"
+                            :rules="[requiredRules]"
                             label="Sobrenome"
                             required
                         ></v-text-field>
                     </v-col>
 
                     <v-col
-                        cols="7"
+                        cols="12"
+                        md="10"
+                        lg="7"
                     >
                         <v-text-field
                             v-model="email"
-                            :rules="emailRules"
+                            :rules="[requiredRules, emailRules]"
                             label="E-mail"
                             required
                         ></v-text-field>
                     </v-col>
 
                     <v-col
-                        cols="7"
+                        cols="12"
+                        md="10"
+                        lg="7"
                     >
                         <v-text-field
                             v-model="phone"
-                            :rules="emailRules"
+                            :rules="[requiredRules, phoneRules]"
                             label="Celular"
+                            v-mask="'(##) # ####-####'"
                             required
                         ></v-text-field>
                     </v-col>
 
                     <v-col
-                        cols="7"
+                        cols="12"
+                        md="10"
+                        lg="7"
                     >
                         <v-text-field
                             v-model="cpf"
-                            :rules="emailRules"
+                            :rules="[requiredRules, cpfRules]"
                             label="CPF"
                             required
+                            v-mask="'###.###.###-##'"
                         ></v-text-field>
                     </v-col>
 
 
-                    <v-col cols="7">
+                    <v-col 
+                        cols="12"
+                        md="10"
+                        lg="7"
+                    >
                         <v-select 
+                            :rules="[requiredRules]"
                             label="Selecione um serviço"
                             :items="servicesItemsFiltered"
                             v-model="selectedItem"
                         />
                     </v-col>
 
-                    <v-col cols="7">
+                    <v-col 
+                        cols="12"
+                        md="10"
+                        lg="7"
+                    >
                         <v-checkbox label="Solicitar como pessoa jurídica?" v-model="requestWithCNPJ" />
                     </v-col>
                     
                     <v-col
-                        cols="7"
+                        cols="12"
+                        md="10"
+                        lg="7"
                         v-if="requestWithCNPJ"
                     >
                         <v-text-field
                             v-model="cnpj"
-                            :rules="emailRules"
+                            :rules="[requiredRules, cnpjRules]"
                             label="CNPJ"
                             required
                         ></v-text-field>
                     </v-col>
 
-                    <v-col cols="7">
+                    <v-col 
+                        cols="12"
+                        md="10"
+                        lg="7"
+                    >
                         <v-radio-group
                         label="Por onde você deseja receber nosso retorno?"
                         v-model="inline"
@@ -125,7 +161,11 @@ const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
                         </v-radio-group>
                     </v-col>
 
-                    <v-col cols="7">
+                    <v-col 
+                        cols="12"
+                        md="10"
+                        lg="7"
+                    >
                         <v-btn variant="outlined" block type="submit">Solicitar orçamento</v-btn>
                     </v-col>
                 </v-row>

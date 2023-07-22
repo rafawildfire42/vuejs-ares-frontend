@@ -10,7 +10,7 @@ import { servicesItems } from '@/utils/data'
             Projetos com segurança e confiança
         </div>
         <div class="text-h5 text-left mt-6">
-            Solicite um orçamento conosco. Trabalhamos com os seguintes projetos:
+            <router-link to="/call-budget" class="text-secondary">Clique aqui</router-link> para solicitar um orçamento conosco. Trabalhamos com os seguintes projetos:
         </div>
         <v-list lines="one" class="text-left transparent px-0">
             <template 

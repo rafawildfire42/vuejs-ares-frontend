@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import Home from '@/vue/views/home/Home.vue'
+import HomePortfolio from '@/vue/views/home/HomePortfolio.vue'
+
 </script>
 
 <template>
-  <div class="pt-28">
+  <div class="index-padding">
     <Home />
+    <HomePortfolio />
   </div>
 </template>
 
 <style>
-.pt-28 {
-  padding-top: 112px;
+.index-padding {
+  padding-top: 80px;
 }
-
 </style>
