@@ -6,6 +6,7 @@ const items = ref([
     {title: "Infraestrutura de Cabeamento Estruturado", icon: "mdi-lan-connect", iconSize: "x-large"},
     {title: "Automação Residencial", icon: "mdi-home-automation", iconSize: "x-large"},
     {title: "SPDA", icon: "mdi-fence-electric", iconSize: "x-large"},
+    {title: "Medição agrupada", icon: "mdi-meter-electric", iconSize: "x-large"},
 ])
 
 </script>
