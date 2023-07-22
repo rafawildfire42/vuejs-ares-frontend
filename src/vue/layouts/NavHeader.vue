@@ -11,7 +11,7 @@ const items = ref([
 </script>
 
 <template>
-  <v-app-bar elevation="0">
+  <v-app-bar elevation="0" color="transparent">
     <!-- Ícone fixado no início -->
     <router-link to="/" class="header-logo">
       <img src="@/assets/ares-logo.svg" class="logo" />
@@ -75,11 +75,6 @@ const items = ref([
 .header-logo {
   justify-content: center;
   display: flex;
-}
-
-.v-toolbar {
-  background-color: #2196f3;
-  color: white;
 }
 
 .v-toolbar__content {

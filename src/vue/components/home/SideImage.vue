@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AresLogo from "@/assets/logos/ares-pattern.jpg"
+import AresLogo from "@/assets/logos/ares-pattern.png"
 </script>
 
 <template>
