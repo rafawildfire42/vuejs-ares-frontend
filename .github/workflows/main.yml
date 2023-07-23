@@ -22,6 +22,9 @@ jobs:
     - name: 🌐 Build Vue.js project
       run: npm run build
 
+    - name: 🚚 Move content to root
+      run: mv dist/* .
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -29,4 +32,3 @@ jobs:
         username: ${{ secrets.ftp_user }}
         password: ${{ secrets.ftp_password }}
         server-dir: public_html/
-        source: "dist/."
