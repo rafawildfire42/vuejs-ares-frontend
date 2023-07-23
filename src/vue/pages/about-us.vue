@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import AboutUs from "@/vue/views/about-us/AboutUs.vue"
+</script>
+
 <template>
-    <h3>Sobre nós</h3>
+    <about-us class="content"/>
 </template>
+
+<style>
+
+</style>

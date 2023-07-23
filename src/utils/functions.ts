@@ -39,3 +39,9 @@ consultarCNPJ(cnpj).then((data) => {
     console.log('CNPJ inválido ou erro na consulta.');
   }
 });
+
+export function callWhatsApp() {
+  const phoneNumber = "63999474437"
+  const message = "Olá! Gostaria de realizar um orçamento para um projeto."
+  window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`, "_blank")
+}

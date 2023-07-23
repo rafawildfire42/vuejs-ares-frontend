@@ -14,7 +14,7 @@ import Gradient from '@/assets/hero-gradient.svg'
           <v-col cols="12" md="7" class="d-flex align-center">
             <side-text />
           </v-col>
-          <v-col cols="0" md="5">
+          <v-col cols="0" md="5" class="d-none d-md-block">
             <side-image />
           </v-col>
         </v-row>

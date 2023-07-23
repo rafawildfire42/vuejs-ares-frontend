@@ -34,7 +34,7 @@ const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
                         md="10"
                         class="d-flex justify-center"
                     >
-                        <h2>Preencha o formulário para solicitar o orçamento</h2>
+                        <h2>Preencha o formulário para solicitar um orçamento</h2>
                     </v-col>
 
                     <v-col

@@ -23,7 +23,7 @@ const services = [
 </script>
 
 <template>
-    <v-container class="my-16">
+    <v-container class="my-4 my-md-8">
       <v-responsive class="align-center text-center fill-height">
         <div class="text-h3">
             Temos diversos <span class="gradient-text">projetos realizados</span> em diversos estados do Brasil!

@@ -4,13 +4,20 @@ import { servicesItems } from '@/utils/data'
 
 </script>
 
+<script lang="ts">
+export default {
+    name: "SideText"
+}
+</script>
+
 <template>
     <div>
         <div class="text-h2 font-weight-bold">
             Projetos com segurança e confiança
         </div>
         <div class="text-h5 text-left mt-6">
-            <router-link to="/call-budget" class="text-secondary">Clique aqui</router-link> para solicitar um orçamento conosco. Trabalhamos com os seguintes projetos:
+            <!-- <router-link to="/call-budget" class="text-secondary">Clique aqui</router-link> para solicitar um orçamento conosco. Trabalhamos com os seguintes projetos: -->
+            Solicite um orçamento conosco. Trabalhamos com os seguintes projetos:
         </div>
         <v-list lines="one" class="text-left transparent px-0">
             <template 
@@ -35,8 +42,7 @@ import { servicesItems } from '@/utils/data'
 
 <style>
 .transparent {
-  /* Definindo a classe "transparent" com fundo transparente */
   background-color: transparent !important;
-  color: white;
+  color: rgb(var(--v-theme-background)) !important;
 }
-</style>@/utils/data
+</style>

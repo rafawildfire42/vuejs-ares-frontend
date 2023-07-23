@@ -3,6 +3,7 @@
 import { ref, watch, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import Gradient from '@/assets/hero-gradient.svg'
+import { callWhatsApp } from '@/utils/functions'
 
 // Defina a variável para controlar o estado do drawer (caso seja utilizado)
 const drawer = ref(false);
@@ -33,14 +34,21 @@ function isRouteActive(route: any) {
     </router-link>
 
     <!-- Textos alinhados ao centro -->
-    <v-container class="d-flex flex-row justify-space-between">
-      <router-link to="/call-budget">
+    <v-container class="d-flex flex-row justify-md-space-between justify-end">
+<!-- 
+      <router-link to="/call-budget" class="d-md-block d-none">
         <v-btn variant="text">
           <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}" class="text-body-1">
             Solicite um orçamento
           </span>
         </v-btn>
-      </router-link>
+      </router-link> -->
+
+      <v-btn variant="text" @click="callWhatsApp()">
+        <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}" class="text-body-1">
+          Solicite um orçamento
+        </span>
+      </v-btn>
 
       <!-- <router-link to="/contacts">
         <v-btn variant="text">
@@ -50,13 +58,18 @@ function isRouteActive(route: any) {
         </v-btn>
       </router-link> -->
 
-      <router-link to="/about-us">
+      <router-link to="/about-us" class="d-md-block d-none">
         <v-btn variant="text">
           <span class="text-body-1 text-primary">
             Sobre nós
           </span>
         </v-btn>
       </router-link>
+
+      <v-btn variant="outlined" style="color: #25D366"  @click="callWhatsApp()">
+        <v-icon icon="mdi-whatsapp" class="pr-2 pt-1" /> (63) 9 9947-4437
+      </v-btn>
+
     </v-container>
 
     
@@ -83,7 +96,7 @@ function isRouteActive(route: any) {
 
 <style>
 .logo {
-  height: 50px; 
+  height: 80px; 
   margin-left: 16px;
 }
 
