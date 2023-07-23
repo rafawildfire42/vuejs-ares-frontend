@@ -24,21 +24,21 @@ async function consultarCNPJ(cnpj: string): Promise<CNPJData | null> {
     };
 
     return cnpjData;
-  } catch (error) {
+  } catch (error: any) {
     console.error('Erro na requisição:', error.message);
     return null;
   }
 }
 
 // Exemplo de uso
-const cnpj = '12345678000190'; // Insira o CNPJ que deseja consultar
-consultarCNPJ(cnpj).then((data) => {
-  if (data) {
-    console.log('Dados da empresa:', data);
-  } else {
-    console.log('CNPJ inválido ou erro na consulta.');
-  }
-});
+// const cnpj = '12345678000190'; // Insira o CNPJ que deseja consultar
+// consultarCNPJ(cnpj).then((data) => {
+//   if (data) {
+//     console.log('Dados da empresa:', data);
+//   } else {
+//     console.log('CNPJ inválido ou erro na consulta.');
+//   }
+// });
 
 export function callWhatsApp() {
   const phoneNumber = "63999474437"

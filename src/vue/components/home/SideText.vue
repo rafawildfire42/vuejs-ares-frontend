@@ -29,11 +29,9 @@ export default {
                 <template v-slot:prepend>
                     <v-icon :icon="item.icon" :size="item.iconSize"></v-icon>
                 </template>
-                <template #title>
-                    <div class="text-h6">
-                        {{ item.title }}
-                    </div>
-                </template>
+                <div class="text-h6">
+                    {{ item.title }}
+                </div>
         </v-list-item>
     </template>
         </v-list>
