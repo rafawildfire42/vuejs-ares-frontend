@@ -8,6 +8,7 @@ import Gradient from '@/assets/hero-gradient.svg'
 <template>
   <div>
     <img :src="Gradient" class="gradient-image" />
+    testes
     <v-container>
       <v-responsive class="align-center text-center fill-height">
         <v-row>
