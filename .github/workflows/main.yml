@@ -11,10 +11,10 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
       
-    - name: 🌐 Install Node.js
+    - name: 🌐 Setup Node.js
       uses: actions/setup-node@v2.4.0
       with:
-        node-version: '14.x'
+        node-version: '18.x'
         
     - name: 🌐 Install dependencies
       run: npm install
@@ -29,3 +29,4 @@ jobs:
         username: ${{ secrets.ftp_user }}
         password: ${{ secrets.ftp_password }}
         server-dir: public_html
+        source: "dist"
