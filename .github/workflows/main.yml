@@ -10,26 +10,21 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
-      
+
     - name: 🌐 Setup Node.js
       uses: actions/setup-node@v2.4.0
       with:
         node-version: '18.x'
-        
+
     - name: 🌐 Install dependencies
       run: npm install
 
     - name: 🌐 Build Vue.js project
       run: npm run build
-      
+
     - name: 🚚 Create assets directory (if not exists)
       run: mkdir -p dist/assets
 
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.ftp_host }}
-        username: ${{ secrets.ftp_user }}
-        password: ${{ secrets.ftp_password }}
-        server-dir: public_html/
-        local-dir: ./dist/
+    - name: 📂 Deploy via FTP
+      run: |
+        lftp -c "open -u ${{ secrets.ftp_user }},${{ secrets.ftp_password }} ${{ secrets.ftp_host }}; set ssl:verify-certificate no; mirror --reverse --delete --verbose ./dist public_html"
