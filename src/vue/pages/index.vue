@@ -6,7 +6,7 @@ import HomePortfolio from '@/vue/views/home/HomePortfolio.vue'
 
 <template>
   <div class="pt-md-16 pt-4">
-    <Home />
-    <HomePortfolio />
+    <home />
+    <home-portfolio />
   </div>
 </template>

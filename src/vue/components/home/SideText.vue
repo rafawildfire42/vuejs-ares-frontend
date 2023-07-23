@@ -12,10 +12,10 @@ export default {
 
 <template>
     <div>
-        <div class="text-h2 font-weight-bold">
+        <div class="text-md-h2 text-h4 font-weight-bold">
             Projetos com segurança e confiança
         </div>
-        <div class="text-h5 text-left mt-6">
+        <div class="text-md-h5 text text-left mt-6">
             <!-- <router-link to="/call-budget" class="text-secondary">Clique aqui</router-link> para solicitar um orçamento conosco. Trabalhamos com os seguintes projetos: -->
             Solicite um orçamento conosco. Trabalhamos com os seguintes projetos:
         </div>
