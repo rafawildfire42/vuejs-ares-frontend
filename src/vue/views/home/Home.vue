@@ -11,10 +11,10 @@ import Gradient from '@/assets/hero-gradient.svg'
     <v-container>
       <v-responsive class="align-center text-center fill-height">
         <v-row>
-          <v-col cols="7" class="d-flex align-center">
+          <v-col cols="12" md="7" class="d-flex align-center">
             <side-text />
           </v-col>
-          <v-col cols="5">
+          <v-col cols="0" md="5">
             <side-image />
           </v-col>
         </v-row>

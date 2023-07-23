@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Importe 'ref' do Vue para utilizar no componente
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 // Defina a variável para controlar o estado do drawer (caso seja utilizado)
@@ -41,13 +41,13 @@ function isRouteActive(route: any) {
         </v-btn>
       </router-link>
 
-      <router-link to="/contacts">
+      <!-- <router-link to="/contacts">
         <v-btn variant="text">
           <span class="text-body-1 text-primary">
             Contatos
           </span>
         </v-btn>
-      </router-link>
+      </router-link> -->
 
       <router-link to="/about-us">
         <v-btn variant="text">
@@ -59,7 +59,7 @@ function isRouteActive(route: any) {
     </v-container>
 
     
-    <v-menu>
+    <!-- <v-menu>
       <template v-slot:activator="{ props }">
         <v-app-bar-nav-icon v-bind="props" />
       </template>
@@ -75,7 +75,7 @@ function isRouteActive(route: any) {
           </v-list-item-title>
         </v-list-item>
       </v-list>
-    </v-menu>
+    </v-menu> -->
 
   </v-app-bar>
 </template>
