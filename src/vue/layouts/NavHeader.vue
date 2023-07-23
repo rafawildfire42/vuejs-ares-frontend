@@ -14,8 +14,12 @@ router.beforeEach((to, from) => {
 
 })
 
+function goToAboutUs() {
+  router.push("/about-us")
+}
+
 const items = ref([
-  { title: "Login", icon: "mdi-account" },
+  { title: "Sobre nós", icon: "mdi-account-group", action: goToAboutUs},
 ])
 
 
@@ -72,24 +76,26 @@ function isRouteActive(route: any) {
 
     </v-container>
 
-    
-    <!-- <v-menu>
-      <template v-slot:activator="{ props }">
-        <v-app-bar-nav-icon v-bind="props" />
-      </template>
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-          :value="index"
-        >
-          <v-list-item-title>
-            <v-icon v-if="item.icon" :icon="item.icon" />
-            {{ item.title }}
-          </v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu> -->
+    <div class="d-md-none d-block">
+      <v-menu>
+        <template v-slot:activator="{ props }">
+          <v-app-bar-nav-icon v-bind="props" />
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="(item, index) in items"
+            :key="index"
+            :value="index"
+            width="160"
+          >
+            <v-list-item-title @click="item.action">
+              <v-icon v-if="item.icon" :icon="item.icon" />
+              {{ item.title }}
+            </v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </div>
 
   </v-app-bar>
 </template>
