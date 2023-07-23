@@ -24,7 +24,16 @@ export default {
             </v-col>
 
             <v-col cols="12" md="6">
-                <v-img :src="ChaletProject"/>
+                <v-img :src="ChaletProject">
+                    <template v-slot:placeholder>
+                        <div class="d-flex align-center justify-center fill-height">
+                            <v-progress-circular
+                                color="grey-lighten-4"
+                                indeterminate
+                            />
+                        </div>
+                    </template>
+                </v-img>
             </v-col>
         </v-row>
 
@@ -33,7 +42,16 @@ export default {
         <v-row>
 
             <v-col cols="12" md="6" class="order-md-first order-last">
-                <v-img :src="Automation"/>
+                <v-img :src="Automation">
+                    <template v-slot:placeholder>
+                    <div class="d-flex align-center justify-center fill-height">
+                        <v-progress-circular
+                            color="grey-lighten-4"
+                            indeterminate
+                        />
+                    </div>
+                    </template>
+                </v-img>
             </v-col>
 
             <v-col cols="12" md="6" class="d-flex align-center">

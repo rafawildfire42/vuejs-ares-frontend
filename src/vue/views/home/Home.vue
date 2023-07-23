@@ -1,26 +1,18 @@
 <script setup lang="ts">
 import SideImage from '@/vue/components/home/SideImage.vue'
 import SideText from '@/vue/components/home/SideText.vue'
-import Gradient from '@/assets/hero-gradient.svg'
 
 </script>
 
 <template>
-  <div>
-    <img :src="Gradient" class="gradient-image" />
-    <v-container>
-      <v-responsive class="align-center text-center fill-height">
-        <v-row>
-          <v-col cols="12" md="7" class="d-flex align-center">
-            <side-text />
-          </v-col>
-          <v-col cols="0" md="5" class="d-none d-md-block">
-            <side-image />
-          </v-col>
-        </v-row>
-      </v-responsive>
-    </v-container>
-  </div>
+  <v-row>
+    <v-col cols="12" md="7" class="d-flex align-center">
+      <side-text />
+    </v-col>
+    <v-col cols="0" md="5" class="d-none d-md-block">
+      <side-image />
+    </v-col>
+  </v-row>
 </template>
 
 <style>
