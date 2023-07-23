@@ -2,6 +2,7 @@
 // Importe 'ref' do Vue para utilizar no componente
 import { ref, watch, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import Gradient from '@/assets/hero-gradient.svg'
 
 // Defina a variável para controlar o estado do drawer (caso seja utilizado)
 const drawer = ref(false);
@@ -25,7 +26,7 @@ function isRouteActive(route: any) {
 </script>
 
 <template>
-  <v-app-bar elevation="0" color="transparent">
+  <v-app-bar elevation="0" color="transparent" scroll-behavior="fade-image elevate inverted" scroll-threshold="1" :image="Gradient">
     <!-- Ícone fixado no início -->
     <router-link to="/" class="header-logo">
       <img src="@/assets/ares-logo.svg" class="logo" />
