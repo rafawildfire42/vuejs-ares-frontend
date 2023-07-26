@@ -20,7 +20,7 @@ import NavHeader from '@/vue/layouts/NavHeader.vue'
 }
 
 .main-background {
-  background-color: #0C0C0D;
+  background-image: linear-gradient(90deg, #030025, #000000);
 }
 
 .v-application {

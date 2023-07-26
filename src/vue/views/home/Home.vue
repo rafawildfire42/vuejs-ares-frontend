@@ -25,13 +25,4 @@ import SideText from '@/vue/components/home/SideText.vue'
   height: 100vh;
 }
 
-.gradient-image {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  object-fit: cover;
-}
-
 </style>
