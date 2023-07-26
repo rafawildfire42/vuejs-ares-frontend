@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <script>
+        window.addEventListener('load', () => {
+            console.log("loaded"); // Verifique se essa mensagem é exibida no console do navegador
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('loaded');
+
+            // Adicione a classe "loaded" ao elemento "body"
+            document.body.classList.add('loaded');
+        });
+    </script>
+
     <meta charset="UTF-8" />
     <link rel="icon" href="/ares-logo.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +20,53 @@
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
 </body>
+
+<style scoped>
+/* Estilos para a página de carregamento */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0; /* Cor de fundo da página de carregamento */
+    display: flex;
+    flex-direction: column; /* Organizar o spinner e o texto em coluna */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Certifique-se de que a página de carregamento fique acima de todos os outros elementos */
+}
+
+.loader {
+    border: 5px solid #0A0946; /* Cor da borda do spinner (azul escuro) */
+    border-top: 5px solid #DA3843; /* Cor da borda superior do spinner (azul claro) */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite; /* Animação do spinner */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.text {
+    margin-top: 10px; /* Adicionar espaço entre o spinner e o texto */
+    font-size: 18px;
+}
+
+/* Esconda o preloader quando a página estiver totalmente carregada */
+body.loaded .preloader {
+    display: none;
+}
+
+</style>
 
 </html>
