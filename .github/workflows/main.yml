@@ -1,33 +1,35 @@
-on: 
+on:
   push:
     branches:
       - main
+
 name: 🚀 Deploy website on push
+
 jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
 
-    - name: 🌐 Setup Node.js
-      uses: actions/setup-node@v2.4.0
-      with:
-        node-version: '18.x'
+      - name: 🌐 Setup Node.js
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: '18.x'
 
-    - name: 🌐 Install dependencies
-      run: npm install
+      - name: 🌐 Install dependencies
+        run: npm install
 
-    - name: 🌐 Build Vue.js project
-      run: npm run build
+      - name: 🌐 Build Vue.js project
+        run: npm run build
 
-    - name: 🚚 Create assets directory (if not exists)
-      run: mkdir -p dist/assets
+      - name: 🚚 Create assets directory (if not exists)
+        run: mkdir -p dist/assets
 
-    - name: 📂 Install lftp
-      run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: 📂 Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
 
-    - name: 📂 Deploy via FTP
-      run: |
-        lftp -c "open -u ${{ secrets.ftp_user }},${{ secrets.ftp_password }} ${{ secrets.ftp_host }}; set ssl:verify-certificate no; mirror --reverse --delete --verbose ./dist public_html"
+      - name: 📂 Deploy via FTP
+        run: |
+          lftp -c "open -u ${{ secrets.ftp_user }},${{ secrets.ftp_password }} ${{ secrets.ftp_host }}; set ssl:verify-certificate no; mirror --reverse --verbose --exclude-glob .htaccess ./dist public_html"
