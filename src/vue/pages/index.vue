@@ -8,21 +8,15 @@ import Gradient from '@/assets/hero-gradient.svg'
 
 <template>
   <div class="pt-md-16 pt-4">
-    <v-container>
 
-      <!-- <img :src="Gradient" class="gradient-image" /> -->
+    <!-- <img :src="Gradient" class="gradient-image" /> -->
 
-      <home class="mb-10" />
+    <home class="mb-10" />
 
-      <v-responsive class="align-center text-center">
+    <home-portfolio />
 
-        <home-portfolio />
-
-        <projects-examples />
-
-      </v-responsive>
+    <projects-examples />
       
-    </v-container>
   </div>
 </template>
 
