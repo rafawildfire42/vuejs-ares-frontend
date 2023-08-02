@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ChaletProject from '@/assets/projects/projeto-chale.png'
-import Automation from '@/assets/projects/automacao-residencial.png'
+import ChaletProject from '@/assets/projects/cad/projeto-chale.png'
+import Automation from '@/assets/projects/cad/automacao-residencial.png'
 
 </script>
 
