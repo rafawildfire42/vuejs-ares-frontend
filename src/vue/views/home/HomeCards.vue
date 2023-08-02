@@ -22,13 +22,15 @@ const services = [
 
 </script>
 
+<script lang="ts">
+export default {
+  name: "HomeCards"
+}
+</script>
+
 <template>
 	<v-container class="portfolio-bg align-center" fluid>
     <v-responsive class="align-center text-center justify-center">
-
-      <div class="text-md-h3 text-h5 text-ares">
-          Temos diversos <span class="gradient-text">projetos realizados</span> em diversos estados do Brasil!
-      </div>
 
       <v-row class="mt-6 mb-10" justify="center">
         <template v-for="service, index in services" :key="index">

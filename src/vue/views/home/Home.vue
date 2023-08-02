@@ -4,6 +4,12 @@ import SideText from '@/vue/components/home/SideText.vue'
 
 </script>
 
+<script lang="ts">
+export default {
+  name: "Home"
+}
+</script>
+
 <template>
   <v-container>
     <v-responsive class="align-center text-center">

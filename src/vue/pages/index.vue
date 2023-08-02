@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Home from '@/vue/views/home/Home.vue'
-import HomePortfolio from '@/vue/views/home/HomePortfolio.vue'
+import HomeCards from '@/vue/views/home/HomeCards.vue'
 import ProjectsExamples from "@/vue/components/services/ProjectsExamples.vue"
-import Gradient from '@/assets/hero-gradient.svg'
+import Portfolio from "@/vue/components/services/Portfolio.vue"
 
 </script>
 
@@ -13,10 +13,10 @@ import Gradient from '@/assets/hero-gradient.svg'
 
     <home class="mb-10" />
 
-    <home-portfolio />
+    <home-cards />
 
-    <projects-examples />
-      
+    <portfolio />
+
   </div>
 </template>
 

@@ -57,7 +57,7 @@ const boxHovered = ref(false)
     justify-content: center;
     -ms-malign-items: center;
     align-items: center;
-    background-color: rgba(14, 22, 112, 0.9);
+    background-color: #0e1538;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -80,8 +80,8 @@ const boxHovered = ref(false)
 .box-hovered::after {
     content: '';
     position: absolute;
-    background: #0e1538;
-    inset: 1px;
+    background-color: rgba(0, 8, 84, 0.9);
+    inset: 2px;
     border-radius: 6px;
 }
 
