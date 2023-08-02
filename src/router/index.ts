@@ -1,7 +1,6 @@
 // Composables
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import AppLayout from '@/vue/layouts/AppLayout.vue'
-import Index from '@/vue/pages/index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -11,22 +10,22 @@ const routes: RouteRecordRaw[] = [
       {
         path: '',
         name: 'index',
-        component: () => import('@/vue/pages/index.vue'),
+        component: () => import('@/pages/index.vue'),
       },
       {
         path: 'call-budget',
         name: 'call-budget',
-        component: () => import('@/vue/pages/call-budget.vue'),
+        component: () => import('@/pages/call-budget.vue'),
       },
       {
         path: 'about-us',
         name: 'about-us',
-        component: () => import('@/vue/pages/about-us.vue'),
+        component: () => import('@/pages/about-us.vue'),
       },
       {
         path: 'contacts',
         name: 'contacts',
-        component: () => import('@/vue/pages/contacts.vue'),
+        component: () => import('@/pages/contacts.vue'),
       },
     ],
   },
