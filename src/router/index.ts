@@ -1,9 +1,9 @@
 // Composables
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import AppLayout from '@/vue/layouts/AppLayout.vue'
 import Index from '@/vue/pages/index.vue'
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: AppLayout,

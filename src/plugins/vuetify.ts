@@ -15,6 +15,7 @@ import { createVuetify, ThemeDefinition } from 'vuetify'
 const AresLightTheme: ThemeDefinition = {
   dark: false,
   colors: {
+    'ares-grey': '#CDCDCD',
     background: '#DFE0E0',
     surface: '#DFE0E0',
     primary: '#DFE0E0',
