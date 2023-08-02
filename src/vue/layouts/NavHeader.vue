@@ -1,13 +1,9 @@
 <script setup lang="ts">
-// Importe 'ref' do Vue para utilizar no componente
-import { ref, watch, onMounted } from 'vue';
+import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import Gradient from '@/assets/hero-gradient.svg'
+import Gradient from '@/assets/svg/nav-header.svg'
 import { callWhatsApp } from '@/utils/functions'
 
-// Defina a variável para controlar o estado do drawer (caso seja utilizado)
-const drawer = ref(false);
-const route = useRoute()
 const router = useRouter()
 
 router.beforeEach((to, from) => {
@@ -38,7 +34,7 @@ function isRouteActive(route: any) {
     </router-link>
 
     <!-- Textos alinhados ao centro -->
-    <v-container class="d-flex flex-row justify-md-space-between justify-end">
+    <v-container class="d-flex flex-row justify-md-space-evenly justify-end">
     <!-- 
       <router-link to="/call-budget" class="d-md-block d-none">
         <v-btn variant="text">
@@ -69,10 +65,10 @@ function isRouteActive(route: any) {
           </span>
         </v-btn>
       </router-link>
-
+<!-- 
       <v-btn variant="outlined" style="color: #25D366"  @click="callWhatsApp()" class="d-md-block d-none">
         <v-icon icon="mdi-whatsapp" class="pr-2 pt-1" /> (63) 9 9947-4437
-      </v-btn>
+      </v-btn> -->
 
     </v-container>
 

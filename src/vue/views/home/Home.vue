@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AresLogo from '@/assets/logos/ares-engenharia.png'
+import AresPattern from '@/assets/logos/ares-pattern.png'
 import { servicesItems } from '@/utils/data'
 
 </script>
@@ -11,8 +12,8 @@ export default {
 </script>
 
 <template>
-  <v-container>
-    <v-responsive class="align-center text-center">
+  <v-container class="body">
+    <v-responsive class="align-center text-center body">
       <v-row>
         <v-col cols="12" md="7" class="d-flex align-center">
           <div>
@@ -66,4 +67,5 @@ export default {
   background-color: transparent !important;
   color: rgb(var(--v-theme-background)) !important;
 }
+
 </style>

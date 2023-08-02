@@ -6,7 +6,7 @@ import ProjectsExamples from "@/vue/components/services/ProjectsExamples.vue"
 <template>
     <v-container>
         <v-responsive class="align-center fill-height">
-            <about-us class="content"/>
+            <about-us />
             <projects-examples />
         </v-responsive>
     </v-container>

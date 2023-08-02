@@ -14,6 +14,10 @@ export default {
   <v-container>
     <v-responsive class="align-center text-center">
       <section>
+        <div class="text-md-h3 text-h6 text-secondary">
+          Por que nos contratar?
+        </div>
+        
         <v-divider class="my-6"/>
 
         <v-row>
