@@ -17,7 +17,7 @@ const boxHovered = ref(false)
         height="320" 
         @mouseenter="boxHovered=true" 
         @mouseleave="boxHovered=false" 
-        elevation="5"
+        elevation="24"
     >
         <v-row class="pa-4">
             <v-col cols="12">
@@ -42,7 +42,7 @@ const boxHovered = ref(false)
     justify-content: center;
     -ms-malign-items: center;
     align-items: center;
-    background-color: rgba(0, 2, 53, 0.5);
+    background-color: rgba(0, 2, 53, 0.9);
     overflow: hidden;
 }
 
@@ -57,8 +57,8 @@ const boxHovered = ref(false)
     justify-content: center;
     -ms-malign-items: center;
     align-items: center;
-    background-color: rgba(14, 22, 112, 0.5);
-    border-radius: 2px;
+    background-color: #0e1538;
+    border-radius: 6px;
     overflow: hidden;
 }
 
@@ -73,16 +73,16 @@ const boxHovered = ref(false)
     position: absolute;
     width: 600px;
     height: 350%;
-    background: linear-gradient(#f7f7f7, #2f2f2f);
+    background: linear-gradient(#f7f7f7, #DA3843);
     animation: rotate 2s linear infinite;
 }
 
 .box-hovered::after {
     content: '';
     position: absolute;
-    background: #0e1538;
-    inset: 1px;
-    border-radius: 2px;
+    background-color: rgba(0, 8, 84, 0.9);
+    inset: 2px;
+    border-radius: 6px;
 }
 
 @keyframes rotate {

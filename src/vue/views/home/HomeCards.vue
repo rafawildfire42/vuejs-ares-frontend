@@ -22,22 +22,32 @@ const services = [
 
 </script>
 
+<script lang="ts">
+export default {
+  name: "HomeCards"
+}
+</script>
+
 <template>
-    <section>
-        <div class="text-md-h3 text-h5">
-            Temos diversos <span class="gradient-text">projetos realizados</span> em diversos estados do Brasil!
-        </div>
+	<v-container class="portfolio-bg align-center" fluid>
+    <v-responsive class="align-center text-center justify-center">
 
-        <v-row class="mt-6 mb-10">
+      <v-row class="mt-6 mb-10" justify="center">
+        <template v-for="service, index in services" :key="index">
+          <v-col cols="12" lg="3">
+              <AnimatedCard v-bind="service" />
+          </v-col>
+        </template>
+      </v-row>
 
-            <template v-for="service, index in services" :key="index">
-                <v-col cols="12" lg="4">
-                    <AnimatedCard v-bind="service" />
-                </v-col>
-            </template>
-
-        </v-row>
-        
-    </section>
+		</v-responsive>
+	</v-container>
 </template>
 
+<style scoped>
+
+.portfolio-bg {
+  background-color: rgb(var(--v-theme-ares-grey))
+}
+
+</style>
