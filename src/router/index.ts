@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/index.vue'),
       },
       {
-        path: 'call-budget',
+        path: 'orcamento',
         name: 'call-budget',
         component: () => import('@/pages/call-budget.vue'),
       },
