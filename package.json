@@ -11,6 +11,7 @@
     "axios": "^1.4.0",
     "pinia": "^2.0.23",
     "roboto-fontface": "*",
+    "unplugin-auto-import": "^0.16.6",
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
     "vue-the-mask": "^0.11.1",
