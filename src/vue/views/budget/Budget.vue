@@ -11,12 +11,6 @@ const phone = ref('');
 const selectedItem = ref(null);
 const inline = ref<number>(0);
 const cpf = ref(null);
-const requestWithCNPJ = ref(null);
-const cnpj = ref(null);
-
-const isFormValid = computed(() => {
-  return valid.value && firstName.value && lastName.value && email.value;
-});
 
 const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
 
@@ -116,28 +110,6 @@ const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
                             :items="servicesItemsFiltered"
                             v-model="selectedItem"
                         />
-                    </v-col>
-
-                    <v-col 
-                        cols="12"
-                        md="10"
-                        lg="7"
-                    >
-                        <v-checkbox label="Solicitar como pessoa jurídica?" v-model="requestWithCNPJ" />
-                    </v-col>
-                    
-                    <v-col
-                        cols="12"
-                        md="10"
-                        lg="7"
-                        v-if="requestWithCNPJ"
-                    >
-                        <v-text-field
-                            v-model="cnpj"
-                            :rules="[requiredRules, cnpjRules]"
-                            label="CNPJ"
-                            required
-                        ></v-text-field>
                     </v-col>
 
                     <v-col 
