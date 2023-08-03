@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import NavHeader from '@/vue/layouts/NavHeader.vue'
+import InfoDialog from '@/vue/components/dialogs/InfoDialog.vue';
+
 
 </script>
 
 <template>
   <v-app>
     <v-main class="main-background content">
+      <InfoDialog />
       <nav-header />
       <router-view />
       <v-footer color="transparent">v1.0 - Desenvolvido por Rafael Moraes. Contato (63) 9 9947-4437.</v-footer>

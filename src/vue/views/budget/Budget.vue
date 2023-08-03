@@ -4,6 +4,7 @@ import { servicesItems, taxIDitems } from '@/utils/data'
 import { createForm } from '@/api/forms'
 import { VForm } from 'vuetify/lib/components/index.mjs';
 import { BudgetForm } from '@/types/forms'
+import { useDialogStore } from '@/store/dialog';
 
 const formData = ref<BudgetForm>({
     firstName: "",
@@ -15,6 +16,7 @@ const formData = ref<BudgetForm>({
     returnWay: null
 })
 
+const dialog = useDialogStore()
 const form = ref<VForm>()
 
 const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
@@ -27,7 +29,12 @@ async function submitForm() {
       console.log("não é valido")
     }
   })
+  dialog.show("teste", "teste123")
 }
+
+onMounted(() => {
+
+})
 
 </script>
 
