@@ -38,7 +38,7 @@ const autoImportConfigs = AutoImport({
   ],
   defaultExportByFilename: false,
   dirs: [],
-  dts: './auto-imports.d.ts',
+  dts: false,
   vueTemplate: false,
   resolvers: [],
   injectAtEnd: true,
