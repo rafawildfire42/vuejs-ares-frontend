@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import { requiredRules, emailRules, cpfRules, cnpjRules, phoneRules } from '@/utils/validations'
 import { servicesItems, taxIDitems } from '@/utils/data'
 import { listForms } from '@/api/forms'
@@ -24,10 +23,6 @@ async function submitForm() {
     form.value?.validate().then(isValid => {console.log(isValid.valid)})
     await listForms()
 }
-
-onMounted(() => {
-  console.log("montado")
-})
 
 </script>
 
