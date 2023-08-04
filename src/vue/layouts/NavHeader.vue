@@ -50,13 +50,6 @@ function isRouteActive(route: any) {
         </span>
       </v-btn>
 
-      <!-- <router-link to="/contacts">
-        <v-btn variant="text">
-          <span class="text-body-1 text-primary">
-            Contatos
-          </span>
-        </v-btn>
-      </router-link> -->
 
       <router-link to="/about-us" class="d-md-block d-none">
         <v-btn variant="text">
@@ -65,7 +58,16 @@ function isRouteActive(route: any) {
           </span>
         </v-btn>
       </router-link>
-<!-- 
+      
+      <router-link to="/cursos">
+        <v-btn variant="text">
+          <span class="text-body-1 text-primary">
+            Cursos
+          </span>
+        </v-btn>
+      </router-link>
+
+      <!-- 
       <v-btn variant="outlined" style="color: #25D366"  @click="callWhatsApp()" class="d-md-block d-none">
         <v-icon icon="mdi-whatsapp" class="pr-2 pt-1" /> (63) 9 9947-4437
       </v-btn> -->
