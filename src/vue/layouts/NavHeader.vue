@@ -11,11 +11,17 @@ router.beforeEach((to, from) => {
 })
 
 function goToAboutUs() {
-  router.push("/about-us")
+  router.push("/sobre-nos")
+}
+
+function goToCourses() {
+  router.push("/cursos")
 }
 
 const items = ref([
-  { title: "Sobre nós", icon: "mdi-account-group", action: goToAboutUs},
+  { title: "Sobre nós", icon: "mdi-account-group", action: goToAboutUs, onlyInMobile: true},
+  { title: "Cursos", icon: "mdi-human-male-board-poll", action: goToCourses, onlyInMobile: true},
+  { title: "WhatsApp", icon: "mdi-whatsapp", action: callWhatsApp, onlyInMobile: false},
 ])
 
 
@@ -37,54 +43,52 @@ function isRouteActive(route: any) {
     <v-container class="d-flex flex-row justify-md-space-evenly justify-end">
     
       <router-link to="/sobre-nos" class="d-md-block d-none">
-        <v-btn variant="tonal">
+        <v-btn variant="tonal" color="primary">
           <span :class="{ 'active-button': isRouteActive('/sobre-nos'), 'text-primary': !isRouteActive('/sobre-nos')}" class="text-body-1">
             Sobre nós
           </span>
         </v-btn>
       </router-link>
       
-      <router-link to="/orcamento" class="d-md-block d-none">
-        <v-btn variant="outlined" color="secondary">
-          <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}" class="text-body-1">
+      <router-link to="/orcamento">
+        <v-btn variant="tonal" color="secondary">
+          <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}">
             Solicite um orçamento
           </span>
         </v-btn>
       </router-link>
 
-      <router-link to="/cursos">
-        <v-btn variant="tonal" class="text-body-1">
+      <router-link to="/cursos" class="d-md-block d-none">
+        <v-btn variant="tonal" class="text-body-1" color="primary">
           <span :class="{ 'active-button': isRouteActive('/cursos'), 'text-primary': !isRouteActive('/cursos')}" >
             Cursos
           </span>
         </v-btn>
       </router-link>
 
-      <!-- 
-      <v-btn variant="outlined" style="color: #25D366"  @click="callWhatsApp()" class="d-md-block d-none">
-        <v-icon icon="mdi-whatsapp" class="pr-2 pt-1" /> (63) 9 9947-4437
-      </v-btn> -->
-
     </v-container>
-    <!-- d-md-none d-block -->
-    <div class=""> 
+
+    <div> 
       <v-menu>
         <template v-slot:activator="{ props }">
           <v-app-bar-nav-icon v-bind="props" />
         </template>
+
         <v-list>
-          <v-list-item
-            v-for="(item, index) in items"
-            :key="index"
-            :value="index"
-            width="160"
-          >
-            <v-list-item-title @click="item.action">
-              <v-icon v-if="item.icon" :icon="item.icon" />
-              {{ item.title }}
-            </v-list-item-title>
-          </v-list-item>
+          <template v-for="(item, index) in items" :key="index">
+            <v-list-item
+              :value="index"
+              width="200"
+              :class="{ 'd-md-none d-block': item.onlyInMobile }"
+            >
+              <v-list-item-title @click="item.action">
+                <v-icon v-if="item.icon" :icon="item.icon" />
+                {{ item.title }}
+              </v-list-item-title>
+            </v-list-item>
+          </template>
         </v-list>
+
       </v-menu>
     </div>
 
