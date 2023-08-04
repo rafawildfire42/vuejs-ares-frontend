@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { requiredRules, emailRules, cpfRules, cnpjRules, phoneRules } from '@/utils/validations'
 import { servicesItems, taxIDitems } from '@/utils/data'
-import { listForms } from '@/api/forms'
+import { createForm } from '@/api/forms'
 import { VForm } from 'vuetify/lib/components/index.mjs';
 import { BudgetForm } from '@/types/forms'
+import { useDialogStore } from '@/store/dialog';
 
 const formData = ref<BudgetForm>({
     firstName: "",
@@ -15,14 +16,25 @@ const formData = ref<BudgetForm>({
     returnWay: null
 })
 
+const dialog = useDialogStore()
 const form = ref<VForm>()
 
 const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
 
 async function submitForm() {
-    form.value?.validate().then(isValid => {console.log(isValid.valid)})
-    await listForms()
+  await form.value?.validate().then(async isValid => {
+    if (isValid.valid) {
+      await createForm(formData.value).then(r => {console.log(r)})
+    } else {
+      console.log("não é valido")
+    }
+  })
+  dialog.show("teste", "teste123")
 }
+
+onMounted(() => {
+
+})
 
 </script>
 
@@ -135,11 +147,11 @@ async function submitForm() {
             >
               <v-radio
                 label="WhatsApp"
-                value="radio-1"
+                value="0"
               />
               <v-radio
                 label="E-mail"
-                value="radio-2"
+                value="1"
               />
             </v-radio-group>
           </v-col>
