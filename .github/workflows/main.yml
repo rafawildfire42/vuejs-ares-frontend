@@ -1,28 +1,31 @@
+name: 🚀 Deploy backend on push
+
 on:
   push:
     branches:
       - main
 
-name: 🚀 Deploy website on push
-
 jobs:
-  web-deploy:
+  backend-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
-      - name: 🌐 Setup Node.js
-        uses: actions/setup-node@v2.4.0
+      - name: 🌐 Setup Python
+        uses: actions/setup-python@v2
         with:
-          node-version: '18.x'
+          python-version: '3.x' # Especifique a versão do Python que você está usando
 
-      - name: 🌐 Install dependencies
-        run: npm install
+      - name: 🌐 Install Poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: 🌐 Build Vue.js project
-        run: npm run build
+      - name: 🌐 Install project dependencies with Poetry
+        run: poetry install
+
+      - name: 🌐 Run migrations
+        run: poetry run python manage.py migrate --settings=aresbackend.settings.production
 
       - name: 🚚 Create assets directory (if not exists)
         run: mkdir -p dist/assets
