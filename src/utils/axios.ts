@@ -1,9 +1,10 @@
-// axiosConfig.js
-
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8000/';
-// Defina as configurações padrão do Axios com a URL base da API
+const baseURL =
+  process.env.NODE_ENV === 'production'
+    ? "https://backend.aresprojetos.com.br/"
+    : "http://localhost:8000/";
+
 const axiosInstance = axios.create({
   baseURL: baseURL,
   headers: {
