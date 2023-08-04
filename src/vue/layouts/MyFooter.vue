@@ -1,20 +1,38 @@
 <script setup lang="ts">
 import AresLogo from '@/assets/logos/ares-compacted.png'
+import { callWhatsApp } from '@/utils/functions'
+
+const email = "projetos@aresprojetos.com.br"
+const router = useRouter()
+
+function mailTo () {
+  window.open(`mailto:${email}?subject=Solicitação de orçamento`)
+}
+
+function goToHome () {
+  router.push("/")
+}
+
+function goToLinkedin () {
+  window.open("https://www.linkedin.com/in/rafael-fontenele/")
+}
 
 </script>
 
 <template>
   <div>
     <v-footer>
-      <v-row justify="space-evenly" class="my-4">
+      <v-row justify="space-evenly" class="my-4 flex-md-row flex-column-reverse">
 
-        <v-col cols="4" class="d-flex flex-column justify-center">
+        <v-col cols="12" md="4" class="d-flex flex-column justify-center align-md-start align-center">
           <div>
             <v-img :src="AresLogo" :width="200" class="align-end mb-4" />
           </div>
           
           <div class="mb-2">
-            Solicite um orçamento | Sobre nós | Cursos
+            <router-link to="/orcamento">Solicite um orçamento</router-link>| 
+            <router-link to="/sobre-nos">Sobre nós</router-link> | 
+            <router-link to="/cursos">Cursos</router-link>
           </div>
 
           <div class="text-subtitle-2">
@@ -23,30 +41,46 @@ import AresLogo from '@/assets/logos/ares-compacted.png'
 
         </v-col>
 
-        <v-col cols="3" class="d-flex flex-column justify-center">
+        <v-col cols="12" md="3" class="d-flex flex-column justify-center align-md-start align-center">
+
           <div class="mb-6">
-            <v-icon icon="mdi-whatsapp" />
-            (63) 9 9947-4437
+            <v-btn variant="text" @click="callWhatsApp()">
+              <v-icon icon="mdi-whatsapp" class="mr-1" />
+              (63) 9 9947-4437
+            </v-btn>
           </div>
+
           <div class="mb-6">
-            <v-icon icon="mdi-email" />
-            projetos@aresprojetos.com.br
+            <v-btn variant="text" @click="mailTo()">
+              <v-icon icon="mdi-email" class="mr-1" />
+              <span class="text-lowercase">
+                {{ email }}
+              </span>
+            </v-btn>
           </div>
+
           <div>
-            <v-icon icon="mdi-web " />
-            www.aresprojetos.com.br
+            <v-btn variant="text" @click="goToHome()">
+              <v-icon icon="mdi-web" class="mr-1" />
+              <span class="text-lowercase">
+                www.aresprojetos.com.br
+              </span>
+            </v-btn>
           </div>
+
         </v-col>
 
-        <v-col cols="3" class="d-flex flex-column justify-center">
+        <v-col cols="12" md="3" class="d-flex flex-column justify-center">
           <div class="text-h5 font-weight-light mb-2">
             Sobre nós
           </div>
           <div class="mb-4">
             A Ares Engenharia é uma empresa que se preocupa com a qualidade, conforto, eficiência e custos dos seus projetos.
           </div>
-          <div>
-            <v-icon icon="mdi-linkedin" />
+          <div class="mx-md-0 mx-auto">
+            <v-btn @click="goToLinkedin()">
+              <v-icon icon="mdi-linkedin" color="#0E76A8" />
+            </v-btn>
           </div>
         </v-col>
 
