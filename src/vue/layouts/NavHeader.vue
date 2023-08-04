@@ -35,33 +35,26 @@ function isRouteActive(route: any) {
 
     <!-- Textos alinhados ao centro -->
     <v-container class="d-flex flex-row justify-md-space-evenly justify-end">
-    <!-- 
-      <router-link to="/call-budget" class="d-md-block d-none">
-        <v-btn variant="text">
-          <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}" class="text-body-1">
-            Solicite um orçamento
-          </span>
-        </v-btn>
-      </router-link> -->
-
-      <v-btn variant="text" @click="callWhatsApp()">
-        <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}" class="text-body-1">
-          Solicite um orçamento
-        </span>
-      </v-btn>
-
-
-      <router-link to="/about-us" class="d-md-block d-none">
-        <v-btn variant="text">
-          <span class="text-body-1 text-primary">
+    
+      <router-link to="/sobre-nos" class="d-md-block d-none">
+        <v-btn variant="tonal">
+          <span :class="{ 'active-button': isRouteActive('/sobre-nos'), 'text-primary': !isRouteActive('/sobre-nos')}" class="text-body-1">
             Sobre nós
           </span>
         </v-btn>
       </router-link>
       
+      <router-link to="/orcamento" class="d-md-block d-none">
+        <v-btn variant="outlined" color="secondary">
+          <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}" class="text-body-1">
+            Solicite um orçamento
+          </span>
+        </v-btn>
+      </router-link>
+
       <router-link to="/cursos">
-        <v-btn variant="text">
-          <span class="text-body-1 text-primary">
+        <v-btn variant="tonal" class="text-body-1">
+          <span :class="{ 'active-button': isRouteActive('/cursos'), 'text-primary': !isRouteActive('/cursos')}" >
             Cursos
           </span>
         </v-btn>
@@ -73,8 +66,8 @@ function isRouteActive(route: any) {
       </v-btn> -->
 
     </v-container>
-
-    <div class="d-md-none d-block">
+    <!-- d-md-none d-block -->
+    <div class=""> 
       <v-menu>
         <template v-slot:activator="{ props }">
           <v-app-bar-nav-icon v-bind="props" />
@@ -121,7 +114,7 @@ function isRouteActive(route: any) {
 }
 
 .active-button {
-  color: blue; /* Ou a cor desejada para o botão ativo */
+  color: rgb(var(--v-theme-secondary)); /* Ou a cor desejada para o botão ativo */
   text-decoration: none;
 }
 

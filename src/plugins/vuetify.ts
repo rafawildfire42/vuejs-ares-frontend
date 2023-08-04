@@ -15,19 +15,19 @@ import { createVuetify, ThemeDefinition } from 'vuetify'
 const AresLightTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    'ares-grey': '#CDCDCD',
     background: '#DFE0E0',
     surface: '#DFE0E0',
     primary: '#DFE0E0',
-    'primary-darken-1': '#3700B3',
     secondary: '#DA3843',
-    'secondary-darken-1': '#018786',
     ares: '#0A0946',
     error: '#B00020',
     info: '#2196F3',
     success: '#4CAF50',
     warning: '#FB8C00',
     application: '#808080',
+    'ares-grey': '#CDCDCD',
+    'primary-darken-1': '#3700B3',
+    'secondary-darken-1': '#018786',
   },
   // Personalize o tema definindo a cor do texto (foreground) como #000000 (preto)
   variables: {
