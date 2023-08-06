@@ -30,7 +30,7 @@ function goToLinkedin () {
           </div>
           
           <div class="mb-2">
-            <router-link to="/orcamento">Solicite um orçamento</router-link>| 
+            <router-link to="/orcamento">Solicite um orçamento</router-link> | 
             <router-link to="/sobre-nos">Sobre nós</router-link> | 
             <router-link to="/cursos">Cursos</router-link>
           </div>
