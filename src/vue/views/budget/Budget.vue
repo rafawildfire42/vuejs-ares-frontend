@@ -16,25 +16,25 @@ const formData = ref<BudgetForm>({
     returnWay: null
 })
 
+const loading = ref(false)
 const dialog = useDialogStore()
 const form = ref<VForm>()
 
 const servicesItemsFiltered = servicesItems.filter(el => el.enabled)
 
 async function submitForm() {
+  loading.value = true
   await form.value?.validate().then(async isValid => {
     if (isValid.valid) {
-      await createForm(formData.value).then(r => {console.log(r)})
-    } else {
-      console.log("não é valido")
+      await createForm(formData.value).then(r => {
+        dialog.show("Orçamento solicitado com sucesso. Agradecemos sua preferência e em breve entraremos em contato.")
+      }).catch(e => {
+        dialog.show("Erro ao solicitar orçamento, tente novamente.")
+      })
     }
   })
-  dialog.show("teste", "teste123")
+  loading.value = false
 }
-
-onMounted(() => {
-
-})
 
 </script>
 
@@ -161,9 +161,9 @@ onMounted(() => {
             md="10"
             lg="7"
           >
-              <v-btn variant="outlined" block type="submit">
-                Solicitar orçamento
-              </v-btn>
+            <v-btn variant="outlined" block type="submit" :loading="loading" :disabled="loading">
+              Solicitar orçamento
+            </v-btn>
           </v-col>
 
         </v-row>
