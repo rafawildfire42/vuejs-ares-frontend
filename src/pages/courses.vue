@@ -52,27 +52,27 @@ function goToElectricalCircuitsCourse() {
             <v-divider></v-divider>
             <v-card-text>
 
-              <div>
+              <div class="pb-1">
                 <v-icon icon="mdi-account-school" />
                 384 alunos
               </div>
 
-              <div>
+              <div class="pb-1">
                 <v-icon icon="mdi-star" color="secondary" />
                 4,8 (106 classificações)
               </div>
 
-              <div>
+              <div class="pb-1">
                 <v-icon icon="mdi-information" />
                 Última atualização em 06/2020
               </div>
 
-              <div>
+              <div class="pb-1">
                 <v-icon icon="mdi-all-inclusive" color="secondary" />
                 Acesso total vitalício
               </div>
 
-              <div>
+              <div class="pb-1">
                 <v-icon icon="mdi-trophy" />
                 Certificado de conclusão
               </div>
