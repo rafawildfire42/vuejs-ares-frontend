@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseURL =
   process.env.NODE_ENV === 'production'
-    ? "https://backend.aresprojetos.com.br/"
+    ? "http://18.191.144.188:8000/"
     : "http://localhost:8000/";
 
 console.log(process.env.NODE_ENV)
