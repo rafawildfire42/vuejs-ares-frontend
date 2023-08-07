@@ -36,7 +36,7 @@ function goToLinkedin () {
           </div>
 
           <div class="text-subtitle-2">
-            Ares Technology © 2023
+            Ares Technology © 2023 - v1.0
           </div>
 
         </v-col>
