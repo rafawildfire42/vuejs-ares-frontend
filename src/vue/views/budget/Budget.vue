@@ -43,11 +43,13 @@ async function submitForm() {
   <v-form ref="form" @submit.prevent="submitForm()">
     <v-container>
       <v-responsive class="align-center fill-height">
-        <v-row justify="center" class="px-md-16 px-0">
+        <v-card variant="tonal" color="primary" class="py-md-8 py-4 px-md-0 px-4">
+        <v-row justify="center">
 
           <v-col
             cols="12"
             md="10"
+            lg="10"
             class="d-flex justify-center"
           >
             <h2>Preencha o formulário para solicitar um orçamento</h2>
@@ -167,6 +169,7 @@ async function submitForm() {
           </v-col>
 
         </v-row>
+        </v-card>
       </v-responsive>
     </v-container>
   </v-form>

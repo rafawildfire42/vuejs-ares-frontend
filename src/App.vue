@@ -44,7 +44,7 @@ import InfoDialog from '@/vue/components/dialogs/InfoDialog.vue';
   background-size: cover;
   background-position: left;
   background-attachment: fixed;
-  opacity: 0.1;
+  opacity: 0.13;
 }
 
 

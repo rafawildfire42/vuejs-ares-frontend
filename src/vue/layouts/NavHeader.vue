@@ -40,35 +40,32 @@ function isRouteActive(route: any) {
     </router-link>
 
     <!-- Textos alinhados ao centro -->
-    <v-container class="d-flex flex-row justify-md-space-evenly justify-end">
-    
-      <router-link to="/sobre-nos" class="d-md-block d-none">
-        <v-btn variant="tonal" color="primary">
-          <span :class="{ 'active-button': isRouteActive('/sobre-nos'), 'text-primary': !isRouteActive('/sobre-nos')}" class="text-body-1">
-            Sobre nós
-          </span>
-        </v-btn>
-      </router-link>
-      
-      <router-link to="/orcamento">
-        <v-btn variant="tonal" color="secondary">
+    <template v-slot:append>
+
+      <router-link to="/orcamento" class="mr-md-8">
+        <v-btn variant="tonal" color="secondary" rounded>
           <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}">
             Solicite um orçamento
           </span>
         </v-btn>
       </router-link>
 
-      <router-link to="/cursos" class="d-md-block d-none">
-        <v-btn variant="tonal" class="text-body-1" color="primary">
+      <router-link to="/sobre-nos" class="d-md-block d-none mr-8">
+        <v-btn variant="tonal" color="primary" rounded>
+          <span :class="{ 'active-button': isRouteActive('/sobre-nos'), 'text-primary': !isRouteActive('/sobre-nos')}" class="text-body-1">
+            Sobre nós
+          </span>
+        </v-btn>
+      </router-link>
+
+      <router-link to="/cursos" class="d-md-block d-none mr-8">
+        <v-btn variant="tonal" class="text-body-1" color="primary" rounded>
           <span :class="{ 'active-button': isRouteActive('/cursos'), 'text-primary': !isRouteActive('/cursos')}" >
             Cursos
           </span>
         </v-btn>
       </router-link>
 
-    </v-container>
-
-    <div> 
       <v-menu>
         <template v-slot:activator="{ props }">
           <v-app-bar-nav-icon v-bind="props" />
@@ -90,7 +87,7 @@ function isRouteActive(route: any) {
         </v-list>
 
       </v-menu>
-    </div>
+    </template>
 
   </v-app-bar>
 </template>
