@@ -66,6 +66,7 @@ async function submitForm() {
               :rules="[requiredRules]"
               label="Primeiro nome"
               required
+              maxlength="50"
             />
           </v-col>
 
@@ -79,6 +80,7 @@ async function submitForm() {
               :rules="[requiredRules]"
               label="Sobrenome"
               required
+              maxlength="100"
             />
           </v-col>
 
@@ -92,6 +94,7 @@ async function submitForm() {
               :rules="[requiredRules, emailRules]"
               label="E-mail"
               required
+              maxlength="50"
             />
           </v-col>
 
@@ -149,7 +152,14 @@ async function submitForm() {
               rows="3"
               no-resize
               required
-            />
+              maxlength="500"
+            >
+              <template v-slot:counter="{ counter }">
+                <span :class="formData.description.length < 500 ? 'text-primary' : 'text-red'">
+                  {{ counter }}
+                </span>
+              </template>
+            </v-textarea>
           </v-col>
 
           <v-col
@@ -190,3 +200,11 @@ async function submitForm() {
     </v-container>
   </v-form>
 </template>
+
+<style scoped>
+/* Estilize o contador de caracteres */
+.v-counter {
+  color: red !important; /* Defina a cor desejada para o contador */
+  background-color:red;
+}
+</style>
