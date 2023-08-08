@@ -9,6 +9,8 @@ import InfoDialog from '@/vue/components/dialogs/InfoDialog.vue';
   <v-app>
     <v-main class="main-background content">
 
+      <div class="background-image"></div>
+
       <info-dialog />
 
       <nav-header />
@@ -29,7 +31,22 @@ import InfoDialog from '@/vue/components/dialogs/InfoDialog.vue';
 
 .main-background {
   background-image: linear-gradient(90deg, #030025, #000000);
+  position: relative;
 }
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/assets/home/solar-eolica.jpg');
+  background-size: cover;
+  background-position: left;
+  background-attachment: fixed;
+  opacity: 0.1;
+}
+
 
 .v-application {
   display: flex;
