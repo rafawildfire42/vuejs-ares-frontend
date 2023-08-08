@@ -13,7 +13,8 @@ const formData = ref<BudgetForm>({
     phone: "",
     email: "",
     service: null,
-    returnWay: null
+    returnWay: null,
+    description: ""
 })
 
 const loading = ref(false)
@@ -133,6 +134,21 @@ async function submitForm() {
               label="Selecione um serviço"
               :items="servicesItemsFiltered"
               v-model="formData.service"
+            />
+          </v-col>
+
+          <v-col
+            cols="12"
+            md="10"
+            lg="7"
+          >
+            <v-textarea 
+              v-model="formData.description"
+              :rules="[requiredRules]"
+              label="Descrição"
+              rows="3"
+              no-resize
+              required
             />
           </v-col>
 

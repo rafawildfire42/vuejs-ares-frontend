@@ -7,4 +7,5 @@ export interface BudgetForm {
   email: string
   service: number | null
   returnWay: number | null
+  description: string
 }
