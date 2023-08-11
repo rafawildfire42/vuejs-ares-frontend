@@ -3,7 +3,7 @@ export const servicesItems = [
     {title: "Infraestrutura de Cabeamento Estruturado", icon: "mdi-lan-connect", iconSize: "x-large", value: 1, enabled: true},
     {title: "Automação Residencial", icon: "mdi-home-automation", iconSize: "x-large", value: 2, enabled: true},
     {title: "SPDA", icon: "mdi-weather-lightning", iconSize: "x-large", value: 3, enabled: true},
-    {title: "Sistemas Fotovoltaicos", icon: "mdi-solar-power-variant", iconSize: "x-large", value: 4, enabled: true},
+    {title: "Energia Solar", icon: "mdi-solar-power-variant", iconSize: "x-large", value: 4, enabled: true},
     {title: "Medição agrupada", icon: "mdi-meter-electric", iconSize: "x-large", value: 5, enabled: true},
 ]
 
