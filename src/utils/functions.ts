@@ -41,7 +41,7 @@ async function consultarCNPJ(cnpj: string): Promise<CNPJData | null> {
 // });
 
 export function callWhatsApp() {
-  const phoneNumber = "63999474437"
+  const phoneNumber = "63981189986"
   const message = "Olá! Gostaria de realizar um orçamento para um projeto."
   window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`, "_blank")
 }

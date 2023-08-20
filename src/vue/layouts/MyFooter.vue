@@ -2,7 +2,7 @@
 import AresLogo from '@/assets/logos/ares-compacted.png'
 import { callWhatsApp } from '@/utils/functions'
 
-const email = "projetos@aresprojetos.com.br"
+const email = "contato@aresprojetos.com.br"
 const router = useRouter()
 
 function mailTo () {
@@ -46,7 +46,7 @@ function goToLinkedin () {
           <div class="mb-6">
             <v-btn variant="text" @click="callWhatsApp()">
               <v-icon icon="mdi-whatsapp" class="mr-1" />
-              (63) 9 9947-4437
+              (63) 9 8118-9986
             </v-btn>
           </div>
 
