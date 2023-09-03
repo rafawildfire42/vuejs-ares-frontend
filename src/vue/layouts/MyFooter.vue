@@ -14,7 +14,11 @@ function goToHome () {
 }
 
 function goToLinkedin () {
-  window.open("https://www.linkedin.com/in/rafael-fontenele/")
+  window.open("https://www.linkedin.com/in/ares-engenharia-12385328b/")
+}
+
+function goToInstagram () {
+  window.open("https://www.instagram.com/aresprojetos")
 }
 
 </script>
@@ -78,8 +82,11 @@ function goToLinkedin () {
             A Ares Engenharia é uma empresa que se preocupa com a qualidade, conforto, eficiência e custos dos seus projetos.
           </div>
           <div class="mx-md-0 mx-auto">
-            <v-btn @click="goToLinkedin()">
+            <v-btn @click="goToLinkedin()" class="mr-2">
               <v-icon icon="mdi-linkedin" color="#0E76A8" />
+            </v-btn>
+            <v-btn @click="goToInstagram()" class="ml-2">
+              <v-icon icon="mdi-instagram" color="#E1306C" />
             </v-btn>
           </div>
         </v-col>
