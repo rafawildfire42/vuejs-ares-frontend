@@ -42,13 +42,13 @@ function isRouteActive(route: any) {
     <!-- Textos alinhados ao centro -->
     <template v-slot:append>
 
-      <router-link to="/orcamento" class="mr-md-8">
-        <v-btn variant="tonal" color="secondary" rounded>
-          <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}">
+      <!-- <router-link to="/orcamento" class="mr-md-8"> -->
+        <v-btn variant="tonal" color="primary" rounded @click="callWhatsApp" class="mr-md-8">
+          <!-- <span :class="{ 'active-button': isRouteActive('/orcamento'), 'text-primary': !isRouteActive('/orcamento')}"> -->
             Solicite um orçamento
-          </span>
+          <!-- </span> -->
         </v-btn>
-      </router-link>
+      <!-- </router-link> -->
 
       <router-link to="/sobre-nos" class="d-md-block d-none mr-8">
         <v-btn variant="tonal" color="primary" rounded>

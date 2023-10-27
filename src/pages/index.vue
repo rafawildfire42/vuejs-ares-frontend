@@ -15,7 +15,7 @@ import Portfolio from "@/vue/components/services/Portfolio.vue"
 
     <home-cards />
 
-    <portfolio />
+    <!-- <portfolio /> -->
 
   </div>
 </template>
